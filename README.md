@@ -1,5 +1,7 @@
 # `mape-execution` component
 
+This component is part of the 5G-MEDIA MAPE service. Take a look in the [mape](https://github.com/5g-media/mape) repository.
+
 ## Introduction
 This component supports three types of operations:
 - NFVO-based operations per network service or individual VNF

@@ -167,7 +167,6 @@ def main():
                     if not completed:
                         raise CompressionEngineConfigurationFailed('Failed to set the vCE profile')
 
-                    # fixme: enable it when vCE is deployed via OSM
                     # Store the optimization events
                     # optimization_event = compose_optimization_event(message, action)
                     # influx_client.write_points(optimization_event)
