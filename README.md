@@ -1,7 +1,7 @@
-# 5G-MEDIA project - `actions-execution-engine` service
+# `mape-execution` component
 
 ## Introduction
-This service supports three types of operations:
+This component supports three types of operations:
 - NFVO-based operations per network service or individual VNF
 - VNF-specific operations per individual VNF e.g. VNF day1,2... configuration
 - hybrid operations
@@ -9,7 +9,8 @@ This service supports three types of operations:
 The NFVO-based operations per NS includes:
 - `vnf_scale_out`: VNF-level scale out in a running NS
 - `vnf_scale_in`: VNF-level scale in in a running NS   
-- `faas_vnf_scale_out`: serverless VNF-level scale out in a running NS
+- `faas_vnf_scale_out`: serverless VNF-level *scale out* in a running NS
+- `faas_vnf_scale_in`: serverless VNF-level *scale in* in a running NS
 - `ns_instantiate`: Instantiate a NS based on NSD in given VIM (future usage)
 - `ns_terminate`: Terminate a running NS (future usage)
 
@@ -34,10 +35,10 @@ For instance, in case of the vCDN service (UC3):
 ## Requirements
 - Python 3.5+ 
   + a set of python packages are used (see `requirements.txt`).
-- The Apache Kafka broker must be accessible from the service
-- The OSM NBI APIs must be accessible from the service.
-- The InfluxDB must be accessible from the service.
-- The Graylog must be accessible from the service.
+- The Apache Kafka broker must be accessible from the component
+- The OSM NBI APIs must be accessible from the component.
+- The InfluxDB must be accessible from the component.
+- The Graylog must be accessible from the component.
 - The vCDN elements must be accessible through the MGMT net [UC3].
 
 ## Configuration
