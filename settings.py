@@ -6,7 +6,7 @@ PROJECT_ROOT = os.path.dirname(os.path.realpath(__file__))
 # =================================
 # KAFKA SETTINGS
 # =================================
-KAFKA_SERVER = "{}:{}".format(os.environ.get("KAFKA_HOST", "217.172.11.173"),
+KAFKA_SERVER = "{}:{}".format(os.environ.get("KAFKA_HOST", "192.168.1.123"),
                               os.environ.get("KAFKA_PORT", "9092"))
 KAFKA_CLIENT_ID = 'actions-execution-engine'
 KAFKA_API_VERSION = (1, 1, 0)
@@ -20,7 +20,7 @@ KAFKA_GROUP_ID = {"worker": "MAPE_ACTIONS_CG", "osm_kafka_subscriber": "5GMEDIA_
 # =================================
 # OSM SETTINGS
 # =================================
-OSM_IP = os.environ.get("OSM_IP", '217.172.11.180')  # '217.172.11.188'
+OSM_IP = os.environ.get("OSM_IP", '192.168.1.123')
 OSM_FAAS_IP = OSM_IP
 OSM_FAAS_PORT = '5001'
 OSM_ADMIN_CREDENTIALS = {"username": os.environ.get("OSM_USER", "admin"),
@@ -48,7 +48,7 @@ INFLUX_DATABASES = {
         'NAME': os.environ.get("INFLUXDB_DB_NAME", 'monitoring'),
         'USERNAME': os.environ.get("INFLUXDB_USER", 'root'),
         'PASSWORD': os.environ.get("INFLUXDB_PWD", 'root'),
-        'HOST': os.environ.get("INFLUXDB_IP", "217.172.11.173"),
+        'HOST': os.environ.get("INFLUXDB_IP", "192.168.1.123"),
         'PORT': os.environ.get("INFLUXDB_PORT", 8086)
     }
 }
@@ -81,6 +81,7 @@ DEFAULT_HANDLER_SETTINGS = {
 #     'port': GRAYLOG_PORT
 # }
 
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -95,21 +96,15 @@ LOGGING = {
         }
     },
     'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'level': 'INFO',
-            'formatter': 'simple',
-        },
-        'graylog': DEFAULT_HANDLER_SETTINGS,
+        # 'console': {
+        #     'class': 'logging.StreamHandler',
+        #     'level': 'INFO',
+        #     'formatter': 'simple',
+        # },
+        # 'graylog': DEFAULT_HANDLER_SETTINGS,
         'worker': DEFAULT_HANDLER_SETTINGS,
         'osm_kafka_subscriber': DEFAULT_HANDLER_SETTINGS,
-        'osm': {
-            'class': 'graypy.GELFUDPHandler',
-            'formatter': 'detailed',
-            'level': 'DEBUG' if DEBUG else 'INFO',
-            'host': GRAYLOG_HOST,
-            'port': GRAYLOG_PORT
-        },
+        'osm': DEFAULT_HANDLER_SETTINGS,
     },
     'loggers': {
         'worker': {
@@ -121,5 +116,9 @@ LOGGING = {
         'osm': {
             'handlers': ['osm']
         }
-    }
+    },
+    'root': {
+        'level': 'INFO',
+        'handlers': []
+    },
 }
