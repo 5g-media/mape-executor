@@ -1,0 +1,52 @@
+{
+  "mano": {
+    "vim": {
+      "type": "faas",
+      "url": "https://10.30.2.64:443",
+      "name": "FaaS_VIM-3",
+      "tag": "kubernetes",
+      "uuid": "8a365c1b-1f62-4bae-b7e9-f99d5d3f20f5"
+    },
+    "vdu": {
+      "flavor": {
+        "disk": null,
+        "ram": null,
+        "vcpus": null
+      },
+      "id": "7c73b447fc444c7eb3b447fc443c7e6e",
+      "image_id": null,
+      "mgmt-interface": null,
+      "ip_address": "0.0.0.0",
+      "name": "accounting_ns-3-vbroker_vnfd-1",
+      "status": "ACTIVE"
+    },
+    "vnf": {
+      "name": null,
+      "index": "3",
+      "short_name": null,
+      "vnfd_name": "vbroker_vnfd",
+      "id": "b349899a-fd02-4a1c-982e-1cb6c1bfc068",
+      "vnfd_id": "6e6bd9ec-1e25-4bb1-906b-eac98a3503da"
+    },
+    "ns": {
+      "nsd_id": "3f41c866-8575-46ae-8d2d-19859fb19b99",
+      "name": "accounting_ns",
+      "nsd_name": "two_transcoder_2_8_4_and_vbroker_nsd",
+      "id": "8380c5bf-d767-4bc9-9697-e79b341b08d0"
+    }
+  },
+  "metric": {
+    "type": "counter",
+    "name": "container_network_receive_packet_loss_percentage",
+    "unit": "%",
+    "timestamp": "2019-05-19T16:20:00.500000Z",
+    "value": 0.0
+  },
+  "analysis": {
+    "action": true
+  },
+  "execution": {
+    "planning": "set_vtranscoder_processing_unit",
+    "value": "gpu"
+  }
+}

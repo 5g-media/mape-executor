@@ -1,0 +1,52 @@
+{
+  "metric": {
+    "name": "err_in",
+    "type": "gauge",
+    "value": 0,
+    "unit": "errors",
+    "timestamp": "2020-03-12T15:16:07.000000Z"
+  },
+  "mano": {
+    "vdu": {
+      "id": "f7dfd4f3-04e3-446d-b37b-d8ac6be1b585",
+      "name": "my_vcdn-3-vCache_mid_vdu-1",
+      "ip_address": "192.168.111.19",
+      "status": "ACTIVE",
+      "image_id": null,
+      "mgmt-interface": null,
+      "flavor": {
+        "disk": null,
+        "vcpus": null,
+        "ram": null
+      }
+    },
+    "ns": {
+      "id": "f7d0d78b-1cb3-48b7-9a9f-da4f4f95ff2f",
+      "name": "my_vcdn",
+      "nsd_id": "3359d0f9-c394-4718-9d27-9fdc230b57c9",
+      "nsd_name": "faas_vm_vCDN-v1.20"
+    },
+    "vnf": {
+      "id": "c6a58dce-5ddc-4d43-8e73-0075eb480a44",
+      "vnfd_id": "bc8ab993-93e9-49fd-b49b-a888c671a3f3",
+      "index": "3",
+      "vnfd_name": "8e880ec0-8081-11e9-bc42-526af7764f64",
+      "name": null,
+      "short_name": null
+    },
+    "vim": {
+      "name": "Openstack_ENG",
+      "type": "openstack",
+      "uuid": "73b4368a-07cb-48e3-abeb-de2b2d313847",
+      "url": "http://217.172.11.169:5000/v3",
+      "tag": "telegraf"
+    }
+  },
+  "analysis": {
+    "action": true
+  },
+  "execution": {
+    "planning": "vnf_scale_out|vnf_scale_in|faas_vnf_scale_out|faas_vnf_scale_in|set_vce_profile|set_vtranscoder_profile",
+    "value": "..."
+  }
+}
